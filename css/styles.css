@@ -52,6 +52,7 @@
     --transition-fast: 150ms ease;
     --transition-normal: 250ms ease;
     --transition-slow: 400ms ease;
+}
 
 * {
     margin: 0;
