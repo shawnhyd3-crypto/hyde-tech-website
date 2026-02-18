@@ -407,12 +407,6 @@ body {
     padding: 28px;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-glow), 0 20px 60px rgba(124, 58, 237, 0.4);
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
 }
 
 @media (max-width: 768px) {
