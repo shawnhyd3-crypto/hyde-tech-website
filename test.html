@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Test | Hyde Tech</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #0F0F1A;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Simple moving bar */
+        .test-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #00F0FF;
+            animation: moveDown 3s linear infinite;
+            z-index: 9999;
+        }
+        
+        @keyframes moveDown {
+            0% { transform: translateY(-5px); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        /* Floating orb */
+        .test-orb {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background: #7C3AED;
+            border-radius: 50%;
+            filter: blur(40px);
+            top: 20%;
+            right: 10%;
+            animation: floatOrb 5s ease-in-out infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, 50px); }
+        }
+        
+        /* Pulsing dot */
+        .test-particle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #F59E0B;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0 0 20px #F59E0B;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(2); opacity: 1; }
+        }
+        
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        p { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="test-bar"></div>
+    <div class="test-orb"></div>
+    <div class="test-particle"></div>
+    
+    <div class="content">
+        <div>
+            <h1>Animation Test</h1>
+            <p>If you see a cyan bar scanning down, a purple orb floating,<br>and a gold dot pulsing - animations are working!</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">
+                <a href="/" style="color: #7C3AED;">← Back to site</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
