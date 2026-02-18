@@ -107,6 +107,15 @@ body {
     color: var(--text-primary);
 }
 
+.logo img {
+    height: 40px;
+    width: auto;
+    background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-500) 50%, var(--gold-500) 100%);
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
 .logo-icon {
     display: flex;
     align-items: center;
