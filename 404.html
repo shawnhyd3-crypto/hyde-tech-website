@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Hyde Tech Solutions</title>
+    <meta name="description" content="Page not found. Let us help you find what you're looking for.">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/shawnhyd3-crypto/hyde-tech-assets/refs/heads/master/hyde-tech-logo.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .error-code {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 800;
+            line-height: 1;
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            animation: glitch 3s infinite;
+        }
+        
+        .error-code::before,
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-code::before {
+            animation: glitch-1 2s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+            transform: translate(-2px, -2px);
+        }
+        
+        .error-code::after {
+            animation: glitch-2 2s infinite;
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+            transform: translate(2px, 2px);
+        }
+        
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-5px, 2px); }
+            94% { transform: translate(5px, -2px); }
+            96% { transform: translate(-3px, -1px); }
+            98% { transform: translate(3px, 1px); }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 90%, 100% { transform: translate(-2px, -2px); opacity: 0.8; }
+            92% { transform: translate(-8px, 3px); opacity: 1; }
+            94% { transform: translate(4px, -3px); opacity: 0.8; }
+            96% { transform: translate(-5px, -2px); opacity: 1; }
+            98% { transform: translate(3px, 2px); opacity: 0.8; }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 90%, 100% { transform: translate(2px, 2px); opacity: 0.8; }
+            92% { transform: translate(6px, -2px); opacity: 1; }
+            94% { transform: translate(-4px, 3px); opacity: 0.8; }
+            96% { transform: translate(5px, 1px); opacity: 1; }
+            98% { transform: translate(-3px, -2px); opacity: 0.8; }
+        }
+        
+        .error-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 24px 0 16px;
+        }
+        
+        .error-message {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .binary-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow: hidden;
+            pointer-events: none;
+            user-select: none;
+            word-break: break-all;
+        }
+        
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            animation: scan 4s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+    <div class="scan-line"></div>
+    <div class="binary-bg" id="binary-bg"></div>
+
+    <section class="error-page">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Looks like this page took a wrong turn in the network. 
+                Let's get you back on track.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">
+                    Back to Home
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="/services/" class="btn btn-secondary">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Generate binary background
+        const binaryBg = document.getElementById('binary-bg');
+        const chars = '01';
+        let binaryText = '';
+        for (let i = 0; i < 2000; i++) {
+            binaryText += chars[Math.floor(Math.random() * chars.length)];
+            if (i % 80 === 0) binaryText += ' ';
+        }
+        binaryBg.textContent = binaryText;
+    </script>
+</body>
+</html>

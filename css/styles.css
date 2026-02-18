@@ -23,6 +23,11 @@
     --bg-tertiary: #252542;
     --bg-card: rgba(26, 26, 46, 0.8);
     
+    /* Animation timing */
+    --animation-slow: 20s;
+    --animation-medium: 10s;
+    --animation-fast: 5s;
+    
     --text-primary: #FFFFFF;
     --text-secondary: #A1A1AA;
     --text-muted: #71717A;
@@ -186,6 +191,149 @@ body {
     overflow: hidden;
 }
 
+/* Animated Grid Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background-image: 
+        linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: grid-move var(--animation-slow) linear infinite;
+    pointer-events: none;
+}
+
+@keyframes grid-move {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(60px); }
+}
+
+/* Floating Particles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float-particle var(--animation-medium) ease-in-out infinite;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; background: var(--gold-500); box-shadow: 0 0 10px var(--gold-500); }
+.particle:nth-child(3) { left: 30%; top: 40%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 50%; top: 60%; animation-delay: 0.5s; background: var(--neon-red); box-shadow: 0 0 10px var(--neon-red); }
+.particle:nth-child(5) { left: 70%; top: 30%; animation-delay: 1.5s; }
+.particle:nth-child(6) { left: 80%; top: 70%; animation-delay: 3s; background: var(--purple-400); box-shadow: 0 0 10px var(--purple-400); }
+.particle:nth-child(7) { left: 90%; top: 50%; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 15%; top: 60%; animation-delay: 4s; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+.particle:nth-child(9) { left: 40%; top: 10%; animation-delay: 1.2s; }
+.particle:nth-child(10) { left: 60%; top: 90%; animation-delay: 2.8s; background: var(--gold-500); box-shadow: 0 0 10px var(--gold-500); }
+
+@keyframes float-particle {
+    0%, 100% { 
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-30px) translateX(10px);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-50px) translateX(-10px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-20px) translateX(5px);
+        opacity: 0.7;
+    }
+}
+
+/* Scan Line Effect */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    animation: scan var(--animation-fast) linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Tech Decorative Elements */
+.tech-decoration {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.tech-decoration.top-left {
+    top: 100px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    border-left: 2px solid var(--neon-cyan);
+    border-top: 2px solid var(--neon-cyan);
+    animation: pulse-border 3s ease-in-out infinite;
+}
+
+.tech-decoration.top-right {
+    top: 150px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-right: 2px solid var(--gold-500);
+    border-top: 2px solid var(--gold-500);
+    animation: pulse-border 3s ease-in-out infinite 1.5s;
+}
+
+.tech-decoration.bottom-left {
+    bottom: 100px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    border-left: 2px solid var(--neon-red);
+    border-bottom: 2px solid var(--neon-red);
+    animation: pulse-border 3s ease-in-out infinite 0.5s;
+}
+
+.tech-decoration.bottom-right {
+    bottom: 150px;
+    right: 30px;
+    width: 120px;
+    height: 120px;
+    border-right: 2px solid var(--purple-400);
+    border-bottom: 2px solid var(--purple-400);
+    animation: pulse-border 3s ease-in-out infinite 2s;
+}
+
+@keyframes pulse-border {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+}
+
 .hero-bg {
     position: absolute;
     inset: 0;
@@ -197,6 +345,7 @@ body {
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.5;
+    animation: orb-float var(--animation-slow) ease-in-out infinite;
 }
 
 .orb-1 {
@@ -205,6 +354,7 @@ body {
     background: var(--purple-600);
     top: -200px;
     right: -200px;
+    animation-delay: 0s;
 }
 
 .orb-2 {
@@ -214,6 +364,33 @@ body {
     bottom: -150px;
     left: -150px;
     opacity: 0.3;
+    animation-delay: -10s;
+}
+
+.orb-3 {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-cyan);
+    top: 50%;
+    left: 50%;
+    opacity: 0.15;
+    animation-delay: -5s;
+    filter: blur(80px);
+}
+
+@keyframes orb-float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(-30px, 50px) scale(0.95);
+    }
+    75% {
+        transform: translate(-50px, -20px) scale(1.05);
+    }
 }
 
 .hero-content {
