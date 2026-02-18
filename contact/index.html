@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Hyde Tech Solutions</title>
+    <meta name="description" content="Get in touch with Hyde Tech Solutions.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">Hyde Tech</span>
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-menu">
+                <a href="/services/" class="nav-link">Services</a>
+                <a href="/ai-phone-agents/" class="nav-link highlight">AI Phone Agents</a>
+                <a href="/about/" class="nav-link">About</a>
+                <a href="/consultation/" class="nav-link">Consultation</a>
+                <a href="/contact/" class="nav-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">☀</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="form-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <span class="section-tag">Contact</span>
+                <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Get in Touch</h1>
+                <p class="section-subtitle">Have a question? Send us a message.</p>
+            </div>
+            
+            <div class="form-container" style="max-width: 600px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 48px;">
+                <form id="contact-form">
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Your Name *</label>
+                        <input type="text" name="name" required placeholder="John Smith" style="width: 100%; padding: 14px 18px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address *</label>
+                        <input type="email" name="email" required placeholder="john@example.com" style="width: 100%; padding: 14px 18px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Message *</label>
+                        <textarea name="message" required placeholder="How can we help you?" style="width: 100%; padding: 14px 18px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1rem; min-height: 120px; resize: vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Send Message
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+                
+                <div id="form-success" style="display: none; text-align: center; padding: 48px 24px;">
+                    <div style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--neon-green); font-size: 2.5rem;">✓</div>
+                    <h2 style="margin-bottom: 12px;">Message Sent!</h2>
+                    <p style="color: var(--text-secondary);">We'll get back to you within 24 hours.</p>
+                    <a href="/" class="btn btn-secondary" style="margin-top: 24px;">Back to Home</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: var(--text-secondary);">Or email us directly at</p>
+                <a href="mailto:info@hydetech.ca" style="font-size: 1.25rem; font-weight: 600; color: var(--purple-400);">info@hydetech.ca</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hyde Tech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        const success = document.getElementById('form-success');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            const subject = `Contact from ${data.name}`;
+            const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+            
+            window.location.href = `mailto:info@hydetech.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            form.style.display = 'none';
+            success.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
