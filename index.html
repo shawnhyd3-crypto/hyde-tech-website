@@ -36,6 +36,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="scan-line"></div>
+        <div class="binary-rain" id="binary-rain"></div>
         <div class="particles-container">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -364,5 +365,26 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Generate binary rain
+        const binaryRain = document.getElementById('binary-rain');
+        const columns = Math.floor(window.innerWidth / 20);
+        
+        for (let i = 0; i < columns; i++) {
+            const column = document.createElement('div');
+            column.className = 'binary-column';
+            column.style.left = (i * 20) + 'px';
+            column.style.animationDuration = (15 + Math.random() * 20) + 's';
+            column.style.animationDelay = (Math.random() * 10) + 's';
+            
+            let binaryText = '';
+            for (let j = 0; j < 50; j++) {
+                binaryText += Math.random() > 0.5 ? '1' : '0';
+                if (j % 5 === 0) binaryText += '<br>';
+            }
+            column.innerHTML = binaryText;
+            binaryRain.appendChild(column);
+        }
+    </script>
 </body>
 </html>
