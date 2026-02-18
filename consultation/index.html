@@ -173,8 +173,8 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
                 <span class="section-tag">Free Consultation</span>
-                <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Let's Discuss Your Needs</h1>
-                <p class="section-subtitle">15 minutes. No pressure. Just honest advice about what's possible.</p>
+                <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Let's Talk</h1>
+                <p class="section-subtitle">15 minutes. No sales pitch. Just figuring out if I can actually help you.</p>
             </div>
             
             <div class="form-container">
@@ -226,21 +226,21 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="message">Tell me about your situation</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="What problem are you trying to solve? What's your current setup? The more detail, the better I can prepare."></textarea>
-                        <p class="form-hint">Optional, but helps me come prepared with relevant examples.</p>
+                        <label class="form-label" for="message">What's going on?</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="What sucks right now? What's broken? More detail = better prep on my end."></textarea>
+                        <p class="form-hint">Optional, but helps me come ready with actual solutions.</p>
                     </div>
                     
                     <button type="submit" class="btn btn-primary form-submit">
-                        Book Consultation
+                        Book a Call
                         <span class="btn-arrow">→</span>
                     </button>
                 </form>
                 
                 <div class="form-success" id="form-success">
                     <div class="form-success-icon">✓</div>
-                    <h2 style="margin-bottom: 12px;">Thanks! I'll be in touch.</h2>
-                    <p style="color: var(--text-secondary);">I've received your request and will email you within 24 hours to schedule our call.</p>
+                    <h2 style="margin-bottom: 12px;">Got it!</h2>
+                    <p style="color: var(--text-secondary);">I'll email you within 24 hours to set up a time.</p>
                     <a href="/" class="btn btn-secondary" style="margin-top: 24px;">
                         Back to Home
                     </a>
@@ -257,7 +257,7 @@
                     <a href="/" class="logo">
                         <img src="https://raw.githubusercontent.com/shawnhyd3-crypto/hyde-tech-assets/refs/heads/master/hyde-tech-logo.png" alt="Hyde Tech Solutions" style="height: 40px; width: auto;">
                     </a>
-                    <p>Professional IT infrastructure and AI solutions for businesses that want to move faster.</p>
+                    <p>AI phone agents and IT that actually works. No BS, no over-engineering, just results.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Services</h4>
@@ -332,9 +332,9 @@ ${data.message || 'No message provided'}
                 success.style.display = 'block';
                 
             } catch (error) {
-                submitBtn.textContent = 'Book Consultation';
+                submitBtn.textContent = 'Book a Call';
                 submitBtn.disabled = false;
-                alert('Something went wrong. Please try again or email us directly at info@hydetech.ca');
+                alert('Something broke. Try again or just email me at info@hydetech.ca');
             }
         });
     </script>
