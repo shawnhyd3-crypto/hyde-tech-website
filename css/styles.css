@@ -221,6 +221,33 @@ body {
     max-width: 800px;
 }
 
+.hero-logo {
+    margin-bottom: 32px;
+}
+
+.hero-logo img {
+    height: 180px;
+    width: auto;
+    max-width: 100%;
+    background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-500) 40%, var(--gold-500) 100%);
+    padding: 20px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-glow), 0 20px 60px rgba(124, 58, 237, 0.4);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .hero-logo img {
+        height: 120px;
+        padding: 16px;
+    }
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
