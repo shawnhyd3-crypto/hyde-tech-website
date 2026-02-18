@@ -1006,14 +1006,71 @@ body {
     .services-grid.secondary {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Glitch Effect for AI text */
+.glitch-ai {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 3s infinite;
+}
+
+.glitch-ai::before,
+.glitch-ai::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-ai::before {
+    animation: glitch-1 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-2px, -2px);
+    color: var(--neon-cyan);
+    opacity: 0.8;
+}
+
+.glitch-ai::after {
+    animation: glitch-2 2s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+    color: var(--purple-400);
+    opacity: 0.8;
+}
+
+@keyframes glitch-skew {
+    0%, 90%, 100% { transform: translate(0); }
+    92% { transform: translate(-2px, 1px); }
+    94% { transform: translate(2px, -1px); }
+    96% { transform: translate(-1px, -1px); }
+    98% { transform: translate(1px, 1px); }
+}
+
+@keyframes glitch-1 {
+    0%, 90%, 100% { transform: translate(-2px, -2px); opacity: 0.8; }
+    92% { transform: translate(-4px, 2px); opacity: 1; }
+    94% { transform: translate(2px, -2px); opacity: 0.8; }
+    96% { transform: translate(-3px, -1px); opacity: 1; }
+    98% { transform: translate(2px, 1px); opacity: 0.8; }
+}
+
+@keyframes glitch-2 {
+    0%, 90%, 100% { transform: translate(2px, 2px); opacity: 0.8; }
+    92% { transform: translate(3px, -1px); opacity: 1; }
+    94% { transform: translate(-2px, 2px); opacity: 0.8; }
+    96% { transform: translate(3px, 1px); opacity: 1; }
+    98% { transform: translate(-2px, -1px); opacity: 0.8; }
 }
