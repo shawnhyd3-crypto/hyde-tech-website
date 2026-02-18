@@ -454,12 +454,9 @@ body {
     height: 380px;
     width: auto;
     max-width: 100%;
-    background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-500) 40%, var(--gold-500) 100%);
-    padding: 28px;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-glow), 0 20px 60px rgba(124, 58, 237, 0.4);
     animation: logo-float 6s ease-in-out infinite;
     position: relative;
+    filter: drop-shadow(0 20px 40px rgba(124, 58, 237, 0.3));
 }
 
 /* Subtle Glitch Effect on Logo */
@@ -471,9 +468,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-500) 40%, var(--gold-500) 100%);
-    padding: 28px;
-    border-radius: var(--radius-xl);
+    background: inherit;
     pointer-events: none;
     opacity: 0;
 }
