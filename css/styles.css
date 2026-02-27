@@ -1018,14 +1018,17 @@ body {
     }
 }
 
-/* Glitch Effect for AI text - partial word version */
+/* Glitch Effect for AI text - partial word version with gradient */
 .glitch-ai {
     display: inline-block;
-    color: var(--neon-cyan);
-    text-shadow: 
-        0 0 10px var(--neon-cyan),
-        0 0 20px var(--neon-cyan);
-    animation: glitch-flicker 2.5s infinite;
+    background: linear-gradient(90deg, #ef4444, #7c3aed, #fbbf24, #ef4444);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+    animation: glitch-flicker 2.5s infinite, gradient-shift 3s ease infinite;
 }
 
 @keyframes glitch-flicker {
@@ -1034,7 +1037,7 @@ body {
         transform: translate(0);
     }
     91% { 
-        opacity: 0.8;
+        opacity: 0.85;
         transform: translate(-2px, 1px);
     }
     92% { 
@@ -1050,17 +1053,18 @@ body {
         transform: translate(1px, 1px);
     }
     95% {
-        opacity: 0.7;
-        text-shadow: 
-            2px 0 10px var(--neon-cyan),
-            -2px 0 10px var(--purple-500);
+        opacity: 0.75;
+        filter: drop-shadow(2px 0 10px rgba(239, 68, 68, 0.8)) drop-shadow(-2px 0 10px rgba(124, 58, 237, 0.6));
     }
     96% {
         opacity: 1;
-        text-shadow: 
-            0 0 10px var(--neon-cyan),
-            0 0 20px var(--neon-cyan);
+        filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
     }
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 @keyframes glitch-1 {
