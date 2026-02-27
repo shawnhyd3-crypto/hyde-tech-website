@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyde Tech Solutions | Mockup - Elden Ring Style</title>
+    <meta name="description" content="Mockup of Hyde Tech with Elden Ring inspired typography">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-500: #7C3AED;
+            --purple-600: #6D28D9;
+            --purple-700: #5B21B6;
+            --purple-400: #A78BFA;
+            --gold-500: #F59E0B;
+            --gold-600: #D97706;
+            --gold-400: #FBBF24;
+            --neon-cyan: #00F0FF;
+            --bg-primary: #0F0F1A;
+            --bg-secondary: #1A1A2E;
+            --bg-card: rgba(26, 26, 46, 0.9);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A1A1AA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Elden Ring Style Typography */
+        h1, h2, h3, .brand-name, .hero-title, .section-title, .stat-number {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .brand-name {
+            font-family: 'Cinzel Decorative', serif;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+            padding: 16px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo-img {
+            height: 42px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold-400);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+            line-height: 1.2;
+        }
+        
+        .brand-tagline {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--gold-400);
+        }
+        
+        .nav-link.highlight {
+            color: var(--purple-400);
+        }
+        
+        .nav-link.highlight:hover {
+            color: var(--neon-cyan);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple-500), var(--gold-500));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .demo-btn {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(220, 38, 38, 0.4);
+            border-color: var(--gold-400);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 24px 80px;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(0, 240, 255, 0.05) 0%, transparent 40%);
+        }
+        
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--purple-600);
+            top: -10%;
+            left: -10%;
+        }
+        
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--gold-600);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            margin-bottom: 40px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--purple-300);
+        }
+        
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+        }
+        
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, var(--purple-400), var(--gold-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-title .glitch-ai {
+            position: relative;
+            color: var(--neon-cyan);
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan);
+            animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 2px); }
+            94% { transform: translate(2px, -2px); }
+            96% { transform: translate(-2px, -2px); }
+            98% { transform: translate(2px, 2px); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(124, 58, 237, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--purple-500);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: var(--gold-500);
+            color: var(--gold-400);
+        }
+        
+        .btn-call {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+        }
+        
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(220, 38, 38, 0.5);
+            border-color: var(--gold-400);
+        }
+        
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-400);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        
+        /* Demo Section */
+        .demo-section {
+            padding: 80px 24px;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+        
+        .demo-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--purple-500), var(--gold-500), transparent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--purple-300);
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-primary), var(--gold-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .demo-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--purple-500), var(--gold-500), var(--neon-cyan));
+        }
+        
+        .demo-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-400);
+            margin-bottom: 20px;
+        }
+        
+        .demo-phone {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+        }
+        
+        .demo-hint {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            text-align: left;
+            margin-top: 32px;
+        }
+        
+        .demo-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .demo-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(124, 58, 237, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-cyan);
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .demo-phone {
+                font-size: 2rem;
+            }
+            
+            .demo-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation with Logo + Business Name -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-link">
+                <img src="https://raw.githubusercontent.com/shawnhyd3-crypto/hyde-tech-assets/refs/heads/master/hyde-tech-logo.png" alt="Hyde Tech" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name">Hyde Tech</span>
+                    <span class="brand-tagline">Solutions</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="/services/" class="nav-link">Services</a>
+                <a href="/ai-phone-agents/" class="nav-link highlight">AI Phone Agents</a>
+                <a href="/about/" class="nav-link">About</a>
+                <a href="/consultation/" class="nav-link">Consultation</a>
+                <a href="/contact/" class="nav-link">Contact</a>
+                <a href="tel:+12895120207" class="demo-btn">📞 Live Demo</a>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                Demo Agent Live Now
+            </div>
+            
+            <h1 class="hero-title">
+                Your Calls, <span class="gradient-text">Handled by </span><span class="glitch-ai">AI</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                AI phone agents that answer when you can't. WiFi that works in your warehouse. 
+                Cameras that actually catch what matters.
+            </p>
+            
+            <div class="hero-cta">
+                <a href="tel:+12895120207" class="btn btn-call">
+                    📞 Call Live Demo (289) 512-0207
+                </a>
+                <a href="/consultation/" class="btn btn-primary">
+                    Book a Call →
+                </a>
+                <a href="/ai-phone-agents/" class="btn btn-secondary">
+                    See How It Works
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Availability</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">AI</span>
+                    <span class="stat-label">Powered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Recorded</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Try It Now</span>
+                <h2 class="section-title">Speak With Our AI Agent</h2>
+            </div>
+            
+            <div class="demo-card">
+                <div class="demo-label">🎧 Live Demo Agent</div>
+                <div class="demo-phone">(289) 512-0207</div>
+                <p class="demo-hint">Call this number — it's our AI agent, live and ready</p>
+                
+                <a href="tel:+12895120207" class="btn btn-call" style="width: 100%; justify-content: center;">
+                    📞 Call the Demo Agent
+                </a>
+                
+                <div class="demo-features">
+                    <div class="demo-feature">
+                        <div class="demo-feature-icon">✓</div>
+                        Answers within 1 ring
+                    </div>
+                    <div class="demo-feature">
+                        <div class="demo-feature-icon">✓</div>
+                        Qualifies leads automatically
+                    </div>
+                    <div class="demo-feature">
+                        <div class="demo-feature-icon">✓</div>
+                        Books appointments
+                    </div>
+                    <div class="demo-feature">
+                        <div class="demo-feature-icon">✓</div>
+                        Works 24/7/365
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
