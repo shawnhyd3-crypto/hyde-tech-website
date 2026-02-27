@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyde Tech - Logo Treatment Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        
+        h1 span {
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .option-card {
+            background: linear-gradient(145deg, #111, #1a1a1a);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .option-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+        
+        .option-desc {
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        
+        /* Demo Area */
+        .demo-area {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #0d0d0d 0%, #111 100%);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-area::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* OPTION A: Signal Ring */
+        .option-a .logo-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .option-a .logo-img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            border-radius: 12px;
+        }
+        
+        .signal-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            animation: signalPulse 2s ease-out infinite;
+        }
+        
+        .signal-ring:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .signal-ring:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes signalPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2.5);
+                opacity: 0;
+            }
+        }
+        
+        .option-a .brand-name {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* OPTION B: Typographic */
+        .option-b .brand-typographic {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        
+        .option-b .brand-typographic .hyde {
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite;
+        }
+        
+        .option-b .brand-typographic .tech {
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        .option-b .tagline {
+            margin-top: 20px;
+            color: #666;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        
+        /* OPTION C: Floating Glow */
+        .option-c .logo-float {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .option-c .logo-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .option-c .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: glowPulse 2s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .option-c .glow-secondary {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            border-radius: 50%;
+            animation: glowPulse 2s ease-in-out infinite;
+            animation-delay: 0.5s;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { 
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+        
+        .option-c .brand-name {
+            margin-top: 30px;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #aaa;
+        }
+        
+        /* Placeholder Logo */
+        .placeholder-logo {
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        /* Mobile Toggle Preview */
+        .mobile-preview {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
+        
+        .mobile-preview h4 {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .navbar-preview {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+        }
+        
+        .navbar-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+        }
+        
+        .navbar-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-text span {
+            color: #00d4ff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .option-b .brand-typographic {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hyde Tech <span>Logo Treatment</span> Options</h1>
+        
+        <div class="options-grid">
+            <!-- OPTION A: Signal Ring -->
+            <div class="option-card option-a">
+                <div class="option-label">Option A</div>
+                <h2 class="option-title">Signal Ring</h2>
+                <p class="option-desc">Small logo with animated radar/signal pulses. Tech-forward, clean, suggests connectivity and AI.</p>
+                
+                <div class="demo-area">
+                    <div class="logo-container">
+                        <div class="signal-ring"></div>
+                        <div class="signal-ring"></div>
+                        <div class="signal-ring"></div>
+                        <div class="placeholder-logo logo-img">HT</div>
+                    </div>
+                    <div class="brand-name">Hyde Tech Solutions</div>
+                </div>
+                
+                <div class="mobile-preview">
+                    <h4>Navbar Preview</h4>
+                    <div class="navbar-preview">
+                        <div class="navbar-logo"></div>
+                        <div class="navbar-text">Hyde <span>Tech</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPTION B: Typographic -->
+            <div class="option-card option-b">
+                <div class="option-label">Option B</div>
+                <h2 class="option-title">Typographic</h2>
+                <p class="option-desc">Bold, modern typography. No image logo needed in hero. Confident, minimal, professional.</p>
+                
+                <div class="demo-area">
+                    <div class="brand-typographic">
+                        <span class="hyde">Hyde</span><br>
+                        <span class="tech">Tech</span>
+                    </div>
+                    <div class="tagline">AI-Powered Solutions</div>
+                </div>
+                
+                <div class="mobile-preview">
+                    <h4>Navbar Preview</h4>
+                    <div class="navbar-preview">
+                        <div class="navbar-logo"></div>
+                        <div class="navbar-text">Hyde <span>Tech</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPTION C: Floating Glow -->
+            <div class="option-card option-c">
+                <div class="option-label">Option C</div>
+                <h2 class="option-title">Floating Glow</h2>
+                <p class="option-desc">Medium logo with soft ambient glow and gentle floating animation. Modern, friendly, approachable.</p>
+                
+                <div class="demo-area">
+                    <div class="logo-float">
+                        <div class="glow-secondary"></div>
+                        <div class="glow"></div>
+                        <div class="placeholder-logo logo-img">HT</div>
+                    </div>
+                    <div class="brand-name">Hyde Tech Solutions</div>
+                </div>
+                
+                <div class="mobile-preview">
+                    <h4>Navbar Preview</h4>
+                    <div class="navbar-preview">
+                        <div class="navbar-logo"></div>
+                        <div class="navbar-text">Hyde <span>Tech</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
