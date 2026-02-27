@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyde Tech - Logo Treatment Options</title>
+    <title>Hyde Tech - Logo Treatment Options (Purple & Yellow)</title>
     <style>
         * {
             margin: 0;
@@ -11,9 +11,22 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --purple-primary: #7c3aed;
+            --purple-dark: #5b21b6;
+            --purple-light: #a78bfa;
+            --yellow-primary: #fbbf24;
+            --yellow-bright: #f59e0b;
+            --red-accent: #dc2626;
+            --red-bright: #ef4444;
+            --black: #0a0a0a;
+            --gray-dark: #111;
+            --gray-mid: #1a1a1a;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
+            background: var(--black);
             color: #fff;
             min-height: 100vh;
             padding: 40px 20px;
@@ -26,15 +39,25 @@
         
         h1 {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
         
         h1 span {
-            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            background: linear-gradient(135deg, var(--purple-primary), var(--yellow-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        
+        .color-note {
+            text-align: center;
+            color: var(--yellow-primary);
+            font-size: 1rem;
+            margin-bottom: 60px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         
         .options-grid {
@@ -44,48 +67,66 @@
         }
         
         .option-card {
-            background: linear-gradient(145deg, #111, #1a1a1a);
-            border-radius: 20px;
+            background: linear-gradient(145deg, var(--gray-dark), var(--gray-mid));
+            border-radius: 24px;
             padding: 40px;
-            border: 1px solid #222;
+            border: 2px solid var(--purple-dark);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.1);
+        }
+        
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--purple-primary), var(--yellow-primary), var(--red-accent));
         }
         
         .option-label {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: linear-gradient(135deg, #00d4ff, #7c3aed);
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--yellow-primary);
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
         }
         
         .option-title {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 10px;
-            color: #00d4ff;
+            color: var(--yellow-primary);
+            font-weight: 700;
         }
         
         .option-desc {
             color: #888;
             margin-bottom: 40px;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         /* Demo Area */
         .demo-area {
-            height: 300px;
+            height: 320px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(180deg, #0d0d0d 0%, #111 100%);
-            border-radius: 16px;
+            background: linear-gradient(180deg, var(--black) 0%, var(--gray-dark) 100%);
+            border-radius: 20px;
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--purple-dark);
         }
         
         .demo-area::before {
@@ -93,27 +134,37 @@
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(220, 38, 38, 0.08) 0%, transparent 40%);
             pointer-events: none;
         }
         
-        /* OPTION A: Signal Ring */
+        /* OPTION A: Signal Ring - Purple & Yellow */
         .option-a .logo-container {
             position: relative;
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
         }
         
         .option-a .logo-img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            border-radius: 12px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.75rem;
+            color: var(--yellow-primary);
+            border: 3px solid var(--yellow-primary);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
         }
         
         .signal-ring {
@@ -121,19 +172,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border: 2px solid #00d4ff;
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--purple-primary);
             border-radius: 50%;
             animation: signalPulse 2s ease-out infinite;
         }
         
         .signal-ring:nth-child(2) {
-            animation-delay: 0.5s;
+            animation-delay: 0.4s;
+            border-color: var(--yellow-primary);
         }
         
         .signal-ring:nth-child(3) {
-            animation-delay: 1s;
+            animation-delay: 0.8s;
+            border-color: var(--red-accent);
         }
         
         @keyframes signalPulse {
@@ -142,62 +195,85 @@
                 opacity: 1;
             }
             100% {
-                transform: translate(-50%, -50%) scale(2.5);
+                transform: translate(-50%, -50%) scale(2.8);
                 opacity: 0;
             }
         }
         
         .option-a .brand-name {
-            margin-top: 30px;
+            margin-top: 35px;
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             animation-delay: 0.5s;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+        }
+        
+        .option-a .brand-name span {
+            color: var(--yellow-primary);
         }
         
         @keyframes fadeIn {
             to { opacity: 1; }
         }
         
-        /* OPTION B: Typographic */
+        /* OPTION B: Typographic - Purple & Yellow */
         .option-b .brand-typographic {
-            font-size: 4rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1;
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            text-align: center;
         }
         
         .option-b .brand-typographic .hyde {
-            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            background: linear-gradient(135deg, var(--yellow-primary) 0%, var(--yellow-bright) 50%, var(--red-accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientShift 4s ease infinite;
+            animation: gradientShift 3s ease infinite;
+            filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.3));
         }
         
         .option-b .brand-typographic .tech {
-            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            background: linear-gradient(135deg, var(--purple-light), var(--purple-primary), var(--purple-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.4));
         }
         
         @keyframes gradientShift {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.2); }
+            0%, 100% { 
+                filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3)) brightness(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.5)) brightness(1.15);
+            }
         }
         
         .option-b .tagline {
-            margin-top: 20px;
-            color: #666;
+            margin-top: 25px;
+            color: var(--purple-light);
             font-size: 1rem;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
+            font-weight: 600;
         }
         
-        /* OPTION C: Floating Glow */
+        .option-b .red-accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red-accent), var(--red-bright));
+            margin: 20px auto 0;
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+        }
+        
+        /* OPTION C: Floating Glow - Purple & Yellow */
         .option-c .logo-float {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             position: relative;
             animation: float 3s ease-in-out infinite;
         }
@@ -205,9 +281,20 @@
         .option-c .logo-img {
             width: 100%;
             height: 100%;
-            border-radius: 20px;
+            border-radius: 24px;
             position: relative;
             z-index: 2;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--yellow-primary);
+            border: 3px solid var(--yellow-primary);
+            box-shadow: 
+                0 0 40px rgba(124, 58, 237, 0.5),
+                inset 0 0 20px rgba(251, 191, 36, 0.2);
         }
         
         .option-c .glow {
@@ -215,9 +302,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 120%;
-            height: 120%;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+            width: 130%;
+            height: 130%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.5) 0%, transparent 70%);
             border-radius: 50%;
             animation: glowPulse 2s ease-in-out infinite;
             z-index: 1;
@@ -228,18 +315,32 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            width: 170%;
+            height: 170%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 60%);
             border-radius: 50%;
             animation: glowPulse 2s ease-in-out infinite;
             animation-delay: 0.5s;
             z-index: 0;
         }
         
+        .option-c .glow-red {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
+            border-radius: 50%;
+            animation: glowPulse 3s ease-in-out infinite;
+            animation-delay: 1s;
+            z-index: -1;
+        }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
         
         @keyframes glowPulse {
@@ -249,67 +350,94 @@
             }
             50% { 
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
+                transform: translate(-50%, -50%) scale(1.15);
             }
         }
         
         .option-c .brand-name {
-            margin-top: 30px;
+            margin-top: 35px;
             font-size: 1.25rem;
-            font-weight: 500;
-            color: #aaa;
+            font-weight: 600;
+            color: #fff;
         }
         
-        /* Placeholder Logo */
-        .placeholder-logo {
-            background: linear-gradient(135deg, #00d4ff, #7c3aed);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
+        .option-c .brand-name span {
+            color: var(--yellow-primary);
         }
         
         /* Mobile Toggle Preview */
         .mobile-preview {
             margin-top: 40px;
             padding: 20px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 16px;
+            border: 1px solid var(--purple-dark);
         }
         
         .mobile-preview h4 {
-            font-size: 0.875rem;
-            color: #666;
+            font-size: 0.75rem;
+            color: var(--purple-light);
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
         }
         
         .navbar-preview {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 12px 20px;
-            background: #1a1a1a;
-            border-radius: 8px;
+            padding: 14px 24px;
+            background: var(--gray-mid);
+            border-radius: 12px;
+            border: 1px solid var(--purple-dark);
         }
         
         .navbar-logo {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            border: 2px solid var(--yellow-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--yellow-primary);
         }
         
         .navbar-text {
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
         }
         
         .navbar-text span {
-            color: #00d4ff;
+            color: var(--yellow-primary);
+        }
+        
+        /* Demo Call Button */
+        .demo-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--red-accent), var(--red-bright));
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(220, 38, 38, 0.5);
+            border-color: var(--yellow-primary);
         }
         
         /* Responsive */
@@ -319,36 +447,42 @@
             }
             
             .option-b .brand-typographic {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hyde Tech <span>Logo Treatment</span> Options</h1>
+        <h1>Hyde Tech <span>Logo Treatment</span></h1>
+        <p class="color-note">Purple · Yellow · Red Accents</p>
         
         <div class="options-grid">
             <!-- OPTION A: Signal Ring -->
             <div class="option-card option-a">
                 <div class="option-label">Option A</div>
                 <h2 class="option-title">Signal Ring</h2>
-                <p class="option-desc">Small logo with animated radar/signal pulses. Tech-forward, clean, suggests connectivity and AI.</p>
+                <p class="option-desc">Small logo with animated radar pulses in purple, yellow, and red. Tech-forward with vibrant energy.</p>
                 
                 <div class="demo-area">
                     <div class="logo-container">
                         <div class="signal-ring"></div>
                         <div class="signal-ring"></div>
                         <div class="signal-ring"></div>
-                        <div class="placeholder-logo logo-img">HT</div>
+                        <div class="logo-img">HT</div>
                     </div>
-                    <div class="brand-name">Hyde Tech Solutions</div>
+                    <div class="brand-name">Hyde <span>Tech</span> Solutions</div>
+                    <a href="tel:+12895120207" class="demo-button">📞 Call Live Demo</a>
                 </div>
                 
                 <div class="mobile-preview">
                     <h4>Navbar Preview</h4>
                     <div class="navbar-preview">
-                        <div class="navbar-logo"></div>
+                        <div class="navbar-logo">HT</div>
                         <div class="navbar-text">Hyde <span>Tech</span></div>
                     </div>
                 </div>
@@ -358,20 +492,22 @@
             <div class="option-card option-b">
                 <div class="option-label">Option B</div>
                 <h2 class="option-title">Typographic</h2>
-                <p class="option-desc">Bold, modern typography. No image logo needed in hero. Confident, minimal, professional.</p>
+                <p class="option-desc">Bold typography. "Hyde" in yellow-to-red gradient, "Tech" in purple. Hard red accent line. Minimal and powerful.</p>
                 
                 <div class="demo-area">
                     <div class="brand-typographic">
                         <span class="hyde">Hyde</span><br>
                         <span class="tech">Tech</span>
                     </div>
+                    <div class="red-accent-line"></div>
                     <div class="tagline">AI-Powered Solutions</div>
+                    <a href="tel:+12895120207" class="demo-button">📞 Call Live Demo</a>
                 </div>
                 
                 <div class="mobile-preview">
                     <h4>Navbar Preview</h4>
                     <div class="navbar-preview">
-                        <div class="navbar-logo"></div>
+                        <div class="navbar-logo">HT</div>
                         <div class="navbar-text">Hyde <span>Tech</span></div>
                     </div>
                 </div>
@@ -381,21 +517,23 @@
             <div class="option-card option-c">
                 <div class="option-label">Option C</div>
                 <h2 class="option-title">Floating Glow</h2>
-                <p class="option-desc">Medium logo with soft ambient glow and gentle floating animation. Modern, friendly, approachable.</p>
+                <p class="option-desc">Medium logo with purple primary glow, yellow secondary, and subtle red outer aura. Modern and dynamic.</p>
                 
                 <div class="demo-area">
                     <div class="logo-float">
+                        <div class="glow-red"></div>
                         <div class="glow-secondary"></div>
                         <div class="glow"></div>
-                        <div class="placeholder-logo logo-img">HT</div>
+                        <div class="logo-img">HT</div>
                     </div>
-                    <div class="brand-name">Hyde Tech Solutions</div>
+                    <div class="brand-name">Hyde <span>Tech</span> Solutions</div>
+                    <a href="tel:+12895120207" class="demo-button">📞 Call Live Demo</a>
                 </div>
                 
                 <div class="mobile-preview">
                     <h4>Navbar Preview</h4>
                     <div class="navbar-preview">
-                        <div class="navbar-logo"></div>
+                        <div class="navbar-logo">HT</div>
                         <div class="navbar-text">Hyde <span>Tech</span></div>
                     </div>
                 </div>
