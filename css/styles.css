@@ -1203,10 +1203,12 @@ body {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+    text-align: center;
 }
 
 /* Live indicator dot */
