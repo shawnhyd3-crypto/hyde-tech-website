@@ -180,7 +180,7 @@
             </div>
             
             <div class="form-container">
-                <form id="consultation-form">
+                <form id="consultation-form" action="https://formspree.io/info@hydetech.ca" method="POST">
                     <div class="form-group">
                         <label class="form-label" for="name">Your Name *</label>
                         <input type="text" id="name" name="name" class="form-input" required placeholder="John Smith">
@@ -299,45 +299,34 @@
             });
         });
         
-        // Form submission
+        // Form submission via Formspree
         const form = document.getElementById('consultation-form');
         const success = document.getElementById('form-success');
-        
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            try {
-                // For GitHub Pages, we'll use a mailto fallback or Formspree
-                // For now, create a mailto link
-                const subject = `Consultation Request from ${data.name}`;
-                const body = `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone || 'Not provided'}
-Business: ${data.business || 'Not provided'}
-Service: ${data.service}
 
-Message:
-${data.message || 'No message provided'}
-                `.trim();
-                
-                window.location.href = `mailto:info@hydetech.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                
-                // Show success
-                form.style.display = 'none';
-                success.style.display = 'block';
-                
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    success.style.display = 'block';
+                } else {
+                    throw new Error('Form submission failed');
+                }
             } catch (error) {
                 submitBtn.textContent = 'Book a Call';
                 submitBtn.disabled = false;
-                alert('Something broke. Try again or just email me at info@hydetech.ca');
+                alert('Something went wrong. Try again or email me directly at info@hydetech.ca');
             }
         });
     </script>
