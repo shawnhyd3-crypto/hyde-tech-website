@@ -57,7 +57,14 @@ Then open http://localhost:8000
 
 ## Deployment
 
-This site is automatically deployed via GitHub Pages when changes are pushed to the `master` branch.
+Production deploys from `master`. Active design/development happens on `dev`.
+
+Recommended flow:
+1. Build on `dev`
+2. Open PR from `dev` to `master`
+3. Merge after review/QA
+
+For a dedicated staging URL (recommended), connect `dev` branch to a free host (Cloudflare Pages/Netlify/Vercel) and map `dev.hydetech.ca`.
 
 To set up custom domain (hydetech.ca):
 1. Go to repo Settings → Pages
