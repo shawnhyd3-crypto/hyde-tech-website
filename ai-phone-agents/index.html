@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1d26">
+  <title>AI Phone Agents — Hyde Tech Solutions</title>
+  <meta name="description" content="24/7 AI phone agents for small service businesses in the GTA. Answers, qualifies, books, confirms — and hands off to you when it matters. Call (289) 512-0207 to hear it working right now.">
+  <link rel="canonical" href="https://hydetech.ca/ai-phone-agents/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <style>
+    /* Transcript block — unique to this page */
+    .transcript {
+      background: var(--ink);
+      color: var(--ink-fg);
+      border-radius: var(--radius-l);
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      line-height: 1.7;
+      display: grid;
+      gap: 0.25rem;
+      max-width: 68ch;
+    }
+    .transcript .caller { color: var(--live); }
+    .transcript .agent  { color: var(--brand-fg); }
+    .transcript .caller::before { content: "Caller  "; color: oklch(0.6 0.008 250); font-weight: 500; margin-inline-end: 0.4rem; }
+    .transcript .agent::before  { content: "Agent   "; color: oklch(0.6 0.008 250); font-weight: 500; margin-inline-end: 0.4rem; }
+    .transcript .meta {
+      display: flex; justify-content: space-between; gap: 1rem;
+      color: oklch(0.65 0.008 250);
+      font-size: var(--step--2);
+      padding-block-end: 0.75rem;
+      margin-block-end: 0.75rem;
+      border-bottom: 1px solid oklch(0 0 0 / 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .transcript .line { padding-block: 0.25rem; }
+
+    .caps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .cap {
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-l);
+      display: grid;
+      gap: 0.5rem;
+    }
+    .cap .tag {
+      font-family: var(--font-mono);
+      font-size: var(--step--2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand);
+    }
+    .cap h3 { font-size: var(--step-1); letter-spacing: -0.01em; }
+    .cap p { color: var(--text); font-size: var(--step--1); max-width: none; }
+    @media (max-width: 820px) { .caps-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .caps-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="live-band" role="region" aria-label="AI demo line">
+    <div class="live-band__inner">
+      <span class="live-band__status"><span class="live-band__dot" aria-hidden="true"></span>LIVE Demo line</span>
+      <span>Call <a href="tel:+12895120207">(289) 512-0207</a> — our AI agent picks up. You're hearing the thing we build.</span>
+      <span class="vh">Serving the Greater Toronto and Hamilton area.</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/" aria-label="Hyde Tech Solutions home">
+        <span class="logo-mark" aria-hidden="true">HT</span>
+        <span>Hyde Tech</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="/services/">Services</a>
+        <a href="/ai-phone-agents/" aria-current="page">AI Phone Agents</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="header-phone" href="tel:+12895120207" aria-label="Call (289) 512-0207">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="label">(289) 512-0207</span>
+        </a>
+        <a class="btn btn-primary" href="/contact/">Book consult</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow"><span class="num">01</span>Flagship service</p>
+        <h1>A 24/7 phone agent that answers, qualifies, and books — in your voice.</h1>
+        <p class="sub">Trained on your actual services, prices, hours, and FAQs. Books directly into your calendar. Texts confirmations. Hands off to you only when it should.</p>
+
+        <div class="hero-phone-block" style="margin-block-start:2rem;">
+          <span class="label"><span class="live-tag">● LIVE</span>Try it before you read the rest:</span>
+          <a class="hero-phone phone-display" href="tel:+12895120207">(289) 512-0207</a>
+        </div>
+        <p style="color:var(--muted); font-size:var(--step--1); max-width:56ch;">That's our agent. Same platform we'd set up for your business. Call it, interrupt it, ask it something weird.</p>
+      </div>
+    </section>
+
+    <!-- SAMPLE TRANSCRIPT -->
+    <section class="services">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="num">02</span>What it sounds like</p>
+          <h2>Real transcript, a Tuesday at 7:42pm.</h2>
+          <p>A plumber's after-hours call. Customer wants a quote. The agent qualifies the job, books tomorrow, texts the address, and moves on.</p>
+        </header>
+
+        <div class="transcript reveal">
+          <div class="meta"><span>Call · 2min 14s</span><span>After-hours · booked</span></div>
+          <div class="line agent">Mercer Plumbing, after-hours. What's going on?</div>
+          <div class="line caller">Hi — my kitchen sink is backed up. Completely. Can't use it.</div>
+          <div class="line agent">That's annoying. Is water actively overflowing or just sitting in the basin?</div>
+          <div class="line caller">Just sitting. Been like that since dinner.</div>
+          <div class="line agent">OK — that's a standard drain clear, not an emergency. We can book you first thing tomorrow. Address and postal code?</div>
+          <div class="line caller">41 Cherry St, L6Y 2R8.</div>
+          <div class="line agent">Got it — Brampton. Our first slot tomorrow is 8:30am, $180 flat-rate for a snake-out, parts extra if we find a bigger issue. Want it?</div>
+          <div class="line caller">Yeah, book it.</div>
+          <div class="line agent">Done. Booked for 8:30am under the name on this caller ID — Jenn, right?</div>
+          <div class="line caller">Yes.</div>
+          <div class="line agent">I'll text you a confirmation and the technician's name. Anything else?</div>
+          <div class="line caller">No, that's it — thanks.</div>
+          <div class="line agent">See you tomorrow.</div>
+        </div>
+
+        <p style="margin-block-start:1.25rem; color:var(--muted); font-size:var(--step--1); max-width:68ch;">Transcript lightly edited for length. The live demo at (289) 512-0207 handles exactly this kind of call.</p>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="how">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="num">03</span>Capabilities</p>
+          <h2>What the agent does out of the box.</h2>
+        </header>
+        <div class="caps-grid">
+          <article class="cap reveal"><span class="tag">Answer</span><h3>Picks up every call</h3><p>24/7, no voicemail, no "please hold". Caller hears a real voice in under a second.</p></article>
+          <article class="cap reveal"><span class="tag">Qualify</span><h3>Asks the right questions</h3><p>Scripted to your intake flow. Won't book a job it doesn't have enough info for.</p></article>
+          <article class="cap reveal"><span class="tag">Book</span><h3>Writes to your calendar</h3><p>Google Calendar, Outlook, or Jobber / Housecall Pro. Real bookings, not "a human will call you back."</p></article>
+          <article class="cap reveal"><span class="tag">Confirm</span><h3>Sends SMS confirmations</h3><p>Appointment details, address, tech name — texted to the caller within seconds of booking.</p></article>
+          <article class="cap reveal"><span class="tag">Hand off</span><h3>Knows when it's over its head</h3><p>Unusual requests, angry callers, insurance claims — it takes a message and flags you immediately.</p></article>
+          <article class="cap reveal"><span class="tag">Report</span><h3>Transcripts you can read</h3><p>Every call transcribed, tagged, and searchable. You see what it said and what the caller asked.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD PROCESS -->
+    <section class="services" id="build">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="num">04</span>The build</p>
+          <h2>Four steps. About two weeks.</h2>
+          <p>We don't drop a black box on you. The agent gets built <em>with</em> you — because only you know what a good booking sounds like.</p>
+        </header>
+
+        <div class="steps">
+          <article class="step reveal">
+            <h3>Discovery</h3>
+            <p>30-minute call. We listen to your current voicemail, your top 20 FAQs, and your booking flow.</p>
+            <time>Day 1</time>
+          </article>
+          <article class="step reveal">
+            <h3>Training</h3>
+            <p>Agent trained on services, prices, hours, handoff rules. You get a private test number.</p>
+            <time>Day 2–5</time>
+          </article>
+          <article class="step reveal">
+            <h3>Break it</h3>
+            <p>You and one staffer try every weird question you've been asked. We tune until it stops fumbling.</p>
+            <time>Day 5–8</time>
+          </article>
+          <article class="step reveal">
+            <h3>Live</h3>
+            <p>Port forward (or parallel line) + first-week daily transcript review with you.</p>
+            <time>Day 8–10</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="how" id="pricing">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="num">05</span>Pricing</p>
+          <h2>Flat setup fee. Predictable monthly.</h2>
+          <p>No per-minute surprises. No "success fees" on bookings.</p>
+        </header>
+
+        <div class="bento">
+          <article class="service service--std">
+            <p class="service-tag">Setup · one-time</p>
+            <h3>Build, train, launch</h3>
+            <p>Everything from discovery to go-live, including the first week of tuning.</p>
+            <span class="price">$500</span>
+          </article>
+          <article class="service service--std">
+            <p class="service-tag">Starter</p>
+            <h3>Up to 200 calls / month</h3>
+            <p>For solo operators, after-hours only, or low-volume lines.</p>
+            <span class="price">$79 / mo</span>
+          </article>
+          <article class="service service--std">
+            <p class="service-tag">Standard</p>
+            <h3>Up to 500 calls · SMS</h3>
+            <p>Full business coverage with SMS confirmations to every caller.</p>
+            <span class="price">$99 / mo</span>
+          </article>
+          <article class="service service--feature">
+            <div>
+              <p class="service-tag">Pro</p>
+              <h3>Unlimited calls + calendar integration + monthly transcript review</h3>
+              <p>For businesses where the phone is the business. Includes a monthly call where we go through transcripts together and tune the script.</p>
+            </div>
+            <div class="cta-side">
+              <span class="live-badge">Most popular</span>
+              <span style="display:block; color:var(--ink-fg); font-family:var(--font-mono); font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight:700; letter-spacing:-0.02em;">$129 / mo</span>
+              <small>Plus the one-time $500 setup.</small>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-block-start:1.25rem; color:var(--muted); font-size:var(--step--1);">Telephony costs (the actual minutes) pass through at cost. Typically $0.02–$0.05 per answered minute, billed monthly at what we pay the carrier.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="fit">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="num">06</span>Honest questions</p>
+          <h2>Stuff you're probably wondering.</h2>
+        </header>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Does it sound like a robot?</summary>
+            <p>It sounds like a person. Call (289) 512-0207 and judge for yourself — we picked the platform partly because it doesn't sound like one of those robocall IVRs.</p>
+          </details>
+          <details>
+            <summary>What happens if it gets something wrong?</summary>
+            <p>Every transcript gets flagged if the agent fumbles. We review them weekly the first month, monthly after. When we find a miss, we update the script and the next caller gets the right answer.</p>
+          </details>
+          <details>
+            <summary>Can I take over a call while it's happening?</summary>
+            <p>Yes — we can configure warm-transfer to your cell. For certain call types (VIP customers, complaints, insurance claims) the agent will ring you directly instead of trying to handle it.</p>
+          </details>
+          <details>
+            <summary>What if I already use Jobber or Housecall Pro?</summary>
+            <p>Supported. The agent books directly into your scheduling system using their API. You see the booking in the same place as everything else.</p>
+          </details>
+          <details>
+            <summary>Do you keep recordings?</summary>
+            <p>Transcripts, yes — for 12 months, so you can search them. Audio recordings, only if you opt in and notify callers (Canadian two-party-consent rules). Default is transcript-only.</p>
+          </details>
+          <details>
+            <summary>Can I cancel?</summary>
+            <p>Month-to-month after setup. 30 days' notice, no long-term contract. We'll even port your number back to your old provider if you leave — no hostage-taking.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block">
+      <div class="container">
+        <p class="eyebrow">Before you book anything</p>
+        <h2>Call the agent. Right now.</h2>
+        <p>It's the fastest, cheapest, most honest product demo in the business.</p>
+        <a class="cta-phone" href="tel:+12895120207">(289) 512-0207</a>
+        <div class="cta-sub">
+          <span>Interrupt it</span>
+          <span>Challenge it</span>
+          <span>Try to break it</span>
+        </div>
+        <a class="btn btn-outline btn-lg" href="/contact/">Then book a 15-min consult</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><span class="mark">HT</span>Hyde Tech</p>
+          <p>AI phone agents and everyday tech for small service businesses across the Greater Toronto and Hamilton area.</p>
+          <p style="margin-block-start:0.75rem;"><strong style="color:var(--ink-fg);">Hamilton, ON · Canada</strong></p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="/ai-phone-agents/">AI phone agents</a>
+          <a href="/services/#wifi">WiFi &amp; networks</a>
+          <a href="/services/#cameras">Security cameras</a>
+          <a href="/services/#smart">Smart home &amp; business</a>
+          <a href="/services/#support">Remote &amp; on-site support</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/about/">About Shawn</a>
+          <a href="/services/">All services</a>
+          <a href="/contact/">Book a consult</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="tel:+12895120207" class="mono" style="font-weight:600;">(289) 512-0207</a></p>
+          <p><a href="mailto:info@hydetech.ca">info@hydetech.ca</a></p>
+          <p style="color:oklch(0.75 0.008 250); margin-block-start:0.5rem;">Mon–Fri 8a–6p · AI agent answers 24/7</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Hyde Tech Solutions</span>
+        <span>Hamilton · Toronto · Mississauga · Brampton · Oakville · Burlington</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="tel:+12895120207">Call (289) 512-0207</a>
+    <a class="btn btn-outline" href="/contact/">Book</a>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    })();
+  </script>
+
+</body>
+</html>
