@@ -1,0 +1,6 @@
+/* Text-first service pages. Portrait and signature logo retain their existing layouts. */
+.hero{min-height:0;overflow:visible}.hero-copy{padding-top:65px;padding-bottom:65px}.hero h1{max-width:850px}.hero p{max-width:620px}.hero h1 br:nth-child(2){display:none}
+.page-hero{grid-template-columns:1fr;max-width:1240px}.page-hero>div{max-width:780px}.page-hero .intro{max-width:690px}
+.services a,.services a:first-child,.services a:last-child{grid-template-columns:45px minmax(0,1fr);gap:0 28px}.services h2,.services p{grid-column:2}.services p{max-width:740px}
+.service-name{display:block}.page-links a{display:block}.form-intro{max-width:650px}
+@media(max-width:750px){.hero{display:block;min-height:0}.hero-copy{padding-top:40px;padding-bottom:45px}.hero h1{font-size:clamp(52px,10vw,65px)}.services a,.services a:first-child,.services a:last-child{grid-template-columns:24px minmax(0,1fr);gap:0 12px}.services h2,.services p{grid-column:2}.services h2{grid-row:1;margin-bottom:8px}.services p{grid-row:2}.page-hero{padding-top:40px;padding-bottom:45px}}
