@@ -1,0 +1,51 @@
+/* Original live-site effect, source dadee91:css/styles.css. */
+.glitch-ai {
+    display: inline-block;
+    background: linear-gradient(90deg, #ef4444, #7c3aed, #fbbf24, #ef4444);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+    animation: glitch-flicker 2.5s infinite, gradient-shift 3s ease infinite;
+}
+
+@keyframes glitch-flicker {
+    0%, 90%, 100% { 
+        opacity: 1;
+        transform: translate(0);
+    }
+    91% { 
+        opacity: 0.85;
+        transform: translate(-2px, 1px);
+    }
+    92% { 
+        opacity: 1;
+        transform: translate(2px, -1px);
+    }
+    93% { 
+        opacity: 0.9;
+        transform: translate(-1px, 0);
+    }
+    94% { 
+        opacity: 1;
+        transform: translate(1px, 1px);
+    }
+    95% {
+        opacity: 0.75;
+        filter: drop-shadow(2px 0 10px rgba(239, 68, 68, 0.8)) drop-shadow(-2px 0 10px rgba(124, 58, 237, 0.6));
+    }
+    96% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+    }
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+
+.studio-paused .glitch-ai{animation-play-state:paused}
