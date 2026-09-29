@@ -4,3 +4,6 @@
 .services a,.services a:first-child,.services a:last-child{grid-template-columns:45px minmax(0,1fr);gap:0 28px}.services h2,.services p{grid-column:2}.services p{max-width:740px}
 .service-name{display:block}.page-links a{display:block}.form-intro{max-width:650px}
 @media(max-width:750px){.hero{display:block;min-height:0}.hero-copy{padding-top:40px;padding-bottom:45px}.hero h1{font-size:clamp(52px,10vw,65px)}.services a,.services a:first-child,.services a:last-child{grid-template-columns:24px minmax(0,1fr);gap:0 12px}.services h2,.services p{grid-column:2}.services h2{grid-row:1;margin-bottom:8px}.services p{grid-row:2}.page-hero{padding-top:40px;padding-bottom:45px}}
+
+/* Preserve the supplied About photograph in full. */
+.owner-portrait img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
