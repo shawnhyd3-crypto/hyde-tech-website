@@ -61,11 +61,17 @@ footer a,footer button{min-height:32px;display:inline-flex;align-items:center}
 /* Carry each service illustration from the overview into its detail page. */
 .page-hero.service-hero{grid-template-columns:minmax(0,1fr) minmax(220px,320px);gap:48px;align-items:center}
 .page-hero.service-hero>div{min-width:0}
-.page-hero.service-hero .service-hero-art{display:block;width:100%;max-width:320px;height:auto;margin:0;justify-self:center;object-fit:contain}
+.page-hero.service-hero .service-hero-copy .intro{margin-bottom:0}
+.page-hero.service-hero .service-hero-visual{display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;max-width:320px;justify-self:center}
+.page-hero.service-hero .service-hero-art{display:block;width:100%;max-width:320px;height:auto;margin:0;object-fit:contain}
+.page-hero.service-hero .service-hero-actions{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;text-align:center}
+.page-hero.service-hero .service-hero-actions .button{max-width:100%;justify-content:center}
 @media(max-width:1000px){
  .page-hero.service-hero{grid-template-columns:1fr;gap:24px}
- .page-hero.service-hero .service-hero-art{width:min(280px,100%);max-width:280px;max-height:187px;justify-self:start}
+ .page-hero.service-hero .service-hero-visual{width:min(280px,100%);max-width:280px;justify-self:start}
+ .page-hero.service-hero .service-hero-art{max-height:187px}
 }
 @media(max-width:750px){
- .page-hero.service-hero .service-hero-art{width:min(240px,100%);max-width:240px;max-height:160px}
+ .page-hero.service-hero .service-hero-visual{width:min(240px,100%);max-width:240px}
+ .page-hero.service-hero .service-hero-art{max-height:160px}
 }
